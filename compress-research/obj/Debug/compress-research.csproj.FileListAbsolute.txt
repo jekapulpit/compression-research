@@ -1,0 +1,7 @@
+F:\ЛАБОРАТОРНЫЕ И КОМПЛЕКТУЮЩИЕ\3 курс 2 семестр\Защита информации\compression-research\compression-research\compress-research\bin\Debug\compress-research.exe.config
+F:\ЛАБОРАТОРНЫЕ И КОМПЛЕКТУЮЩИЕ\3 курс 2 семестр\Защита информации\compression-research\compression-research\compress-research\bin\Debug\compress-research.exe
+F:\ЛАБОРАТОРНЫЕ И КОМПЛЕКТУЮЩИЕ\3 курс 2 семестр\Защита информации\compression-research\compression-research\compress-research\bin\Debug\compress-research.pdb
+F:\ЛАБОРАТОРНЫЕ И КОМПЛЕКТУЮЩИЕ\3 курс 2 семестр\Защита информации\compression-research\compression-research\compress-research\obj\Debug\compress-research.csprojAssemblyReference.cache
+F:\ЛАБОРАТОРНЫЕ И КОМПЛЕКТУЮЩИЕ\3 курс 2 семестр\Защита информации\compression-research\compression-research\compress-research\obj\Debug\compress-research.csproj.CoreCompileInputs.cache
+F:\ЛАБОРАТОРНЫЕ И КОМПЛЕКТУЮЩИЕ\3 курс 2 семестр\Защита информации\compression-research\compression-research\compress-research\obj\Debug\compress-research.exe
+F:\ЛАБОРАТОРНЫЕ И КОМПЛЕКТУЮЩИЕ\3 курс 2 семестр\Защита информации\compression-research\compression-research\compress-research\obj\Debug\compress-research.pdb
