@@ -63,7 +63,8 @@ namespace compress_research
         {
             Number = Array.IndexOf(_matrix, Message);
         }
-        public string Encrypt(string message)
+
+        public string encrypt(string message)
         {
             string encryptMessage;
             Init(message);
@@ -74,7 +75,7 @@ namespace compress_research
             return encryptMessage;
         }
 
-        public string Decrypt(string message, int number)
+        public string decrypt(string message, int number)
         {
             Init(message, number);
             RenderDecryptMatrix();

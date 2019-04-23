@@ -29,7 +29,6 @@ namespace compress_research
             sb.AppendFormat("{0}{1}", count, current);
             return sb.ToString();
         }
-
         public string decode(string s)
         {
             string a = "";

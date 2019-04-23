@@ -46,6 +46,7 @@
     <Compile Include="BWT.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Researcher.cs" />
     <Compile Include="RLE.cs" />
   </ItemGroup>
   <ItemGroup>
