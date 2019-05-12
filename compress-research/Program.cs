@@ -10,6 +10,7 @@ namespace compress_research
     {
         static void Main(string[] args)
         {
+
             string input = "пввыпваававвыпвыввпвыпвпвыпыпвпвыпвыпвыпвыпвыввпвыпвпвыпвыпвыпввыпвыввпвыпвпвыпвыпаавыпавпавыпвыпвыпвыпвыввпвыпвпвыпвыпвыпвыпвыпввыпввыпвыввпвыпвпвыпыпвыпвып";
             Researcher researcher = new Researcher(input, new BWT(), new RLE());
             researcher.execute(0, 0);
