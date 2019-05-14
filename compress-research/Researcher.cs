@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace compress_research
 {
@@ -18,22 +19,29 @@ namespace compress_research
             _compressor = compressor;
         }
 
-        public int execute(int sortAlgorythm, int blockSize) // need to add a sort algorythm and block size
+        public int execute() // need to add a sort algorythm and block size
         {
             string resString = this._input;
+            string resBuffer = resString;
             float startLength = resString.Length;
-            float endLength;
-            Console.WriteLine("Supreme message: " + resString + " length: " + startLength);
-            resString = this.prepareSort(resString); // add a sort algorythm
-            Console.WriteLine("\nSorted message: " + resString);
-            resString = this.compress(resString);
-            endLength = resString.Length;
-            Console.WriteLine("\nCompressed message: " + resString + " length: " + endLength);
-            resString = this.decompress(resString);
-            Console.WriteLine("\nDecompressed message: " + resString);
-            resString = this.encodeSort(resString);
+            float endLength = 0;
+            Console.WriteLine("Supreme message length: " + startLength);
+            Console.WriteLine("\nAlgorythm\t\t\tTime");
+            for(int i = 1; i < 6; i++ )
+            {
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                resString = this.prepareSort(resString);
+                resString = this.compress(resString);
+                resBuffer = resString;
+                endLength = resString.Length;
+                resString = this.decompress(resString);
+                resString = this.encodeSort(resString, i);
+                watch.Stop();
+                Console.WriteLine(watch.ElapsedMilliseconds + "ms");
+            }
+            Console.WriteLine("\nCompressed message: " + resBuffer + "\nlength: " + resBuffer.Length);
             Console.WriteLine("\nResorted message: " + resString);
-            Console.WriteLine("\nCompress effitiency: " + (startLength - endLength)*100/startLength + "%");
+            Console.WriteLine("\nEffitiency: " + (startLength - endLength)*100/startLength + "%");
             return 0;
         }
 
@@ -52,9 +60,9 @@ namespace compress_research
             return this._compressor.decode(compressedString);
         }
 
-        private string encodeSort(string sortedString)
+        private string encodeSort(string sortedString, int sortAlgorythm)
         {
-            return this._sorter.decrypt(sortedString, _sorter.Number);
+            return this._sorter.decrypt(sortedString, _sorter.Number, sortAlgorythm);
         }
     }
 }

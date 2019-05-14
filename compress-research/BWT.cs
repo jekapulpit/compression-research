@@ -75,10 +75,29 @@ namespace compress_research
             return encryptMessage;
         }
 
-        public string decrypt(string message, int number)
+        public string decrypt(string message, int number, int sortAlgorythm)
         {
             Init(message, number);
-            RenderDecryptMatrix();
+            switch (sortAlgorythm)
+            {
+                case 1:
+                    Console.Write("Bubble Sort\t\t\t");
+                    break;
+                case 2:
+                    Console.Write("Selection Sort\t\t\t");
+                    break;
+                case 3:
+                    Console.Write("Insertion Sort\t\t\t");
+                    break;
+                case 4:
+                    Console.Write("Shell Sort\t\t\t");
+                    break;
+                case 5:
+                    Console.Write("Quick Sort\t\t\t");
+                    break;
+                default: break;
+            }
+            RenderDecryptMatrix(sortAlgorythm);
 
             return GetDecryptMessage();
         }
@@ -88,16 +107,32 @@ namespace compress_research
             return _matrix[Number];
         }
 
-        private void RenderDecryptMatrix()
+        private void RenderDecryptMatrix(int sortAlgorythm)
         {
             for (int j = 0; j < _length; j++)
             {
                 for (int i = 0; i < _length; i++)
                 {
                     _matrix[i] = Message.Substring(i, 1) + _matrix[i];
-
                 }
-                Array.Sort(_matrix);
+                switch (sortAlgorythm) {
+                    case 1:
+                        _matrix = this.BubbleSort(_matrix);
+                        break;
+                    case 2:
+                        _matrix = this.SelectionSort(_matrix);
+                        break;
+                    case 3:
+                        _matrix = this.InsertionSort(_matrix);
+                        break;
+                    case 4:
+                        _matrix = this.ShellSort(_matrix);
+                        break;
+                    case 5:
+                        Array.Sort(_matrix);
+                        break;
+                    default: break;
+                }
             }
 
         }
